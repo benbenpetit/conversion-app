@@ -1,17 +1,24 @@
 <script>
-  import Input from './components/Input.svelte';
-  import Result from './components/Result.svelte';
+  import { Router, Route, Link } from 'svelte-routing';
+  import LengthPage from './components/Length/LengthPage.svelte';
+  import WeightPage from './components/Weight/WeightPage.svelte';
+  import TemperaturePage from './components/Temperature/TemperaturePage.svelte';
 </script>
 
 <main>
   <h1>Conversion App</h1>
-  <div class="container">
-    <Input />
-    <Input />
-    <Input />
-    <h2>Résultat de la convertion :</h2>
-    <Result />
-  </div>
+  <Router>
+    <nav>
+      <Link to="/">Longueur</Link>
+      <Link to="poids">Poids</Link>
+      <Link to="temperature">Température</Link>
+    </nav>
+    <div>
+      <Route path="/" component={LengthPage} />
+      <Route path="poids" component={WeightPage} />
+      <Route path="temperature" component={TemperaturePage} />
+    </div>
+  </Router>
 </main>
 
 <style>
@@ -20,9 +27,6 @@
     padding: 1em;
     max-width: 240px;
     margin: 0 auto;
-  }
-
-  .container {
     display: flex;
     flex-direction: column;
     align-items: center;

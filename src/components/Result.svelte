@@ -1,8 +1,11 @@
-<script></script>
+<script>
+  export let result;
+</script>
 
 <ul>
-  <li>Kg :</li>
-  <li>gh :</li>
+  {#each result as res}
+    <li>{res.value}{res.unit}</li>
+  {/each}
 </ul>
 
 <style></style>
