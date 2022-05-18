@@ -41,15 +41,17 @@
     hgValue = 0;
   }
 
-  //On convertie toutes les valeurs en Kg
+  //On convertie toutes les valeurs en Livre
   $: inputValue =
-    kgValue +
-    dagValue / Math.pow(10, 1) +
-    hgValue / Math.pow(10, 2) +
-    gValue / Math.pow(10, 3) +
-    dgValue / Math.pow(10, 4) +
-    cgValue / Math.pow(10, 5) +
-    mgValue / Math.pow(10, 6);
+    (
+      kgValue +
+      dagValue / Math.pow(10, 1) +
+      hgValue / Math.pow(10, 2) +
+      gValue / Math.pow(10, 3) +
+      dgValue / Math.pow(10, 4) +
+      cgValue / Math.pow(10, 5) +
+      mgValue / Math.pow(10, 6)
+    ).toFixed(6) * 2.205;
 </script>
 
 <InputNumber label="Kilogramme" bind:value={kgValue} />

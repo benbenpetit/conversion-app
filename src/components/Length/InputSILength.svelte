@@ -41,15 +41,17 @@
     hmValue = 0;
   }
 
-  //On convertie toutes les valeurs en Km
+  //On convertie toutes les valeurs en Mile
   $: inputValue =
-    kmValue +
-    damValue / Math.pow(10, 1) +
-    hmValue / Math.pow(10, 2) +
-    mValue / Math.pow(10, 3) +
-    dmValue / Math.pow(10, 4) +
-    cmValue / Math.pow(10, 5) +
-    mmValue / Math.pow(10, 6);
+    (
+      kmValue +
+      damValue / Math.pow(10, 1) +
+      hmValue / Math.pow(10, 2) +
+      mValue / Math.pow(10, 3) +
+      dmValue / Math.pow(10, 4) +
+      cmValue / Math.pow(10, 5) +
+      mmValue / Math.pow(10, 6)
+    ).toFixed(6) / 1.609;
 </script>
 
 <InputNumber label="Kilomètre" bind:value={kmValue} />

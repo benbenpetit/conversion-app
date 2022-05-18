@@ -1,19 +1,22 @@
 <script>
   import Result from '../Result.svelte';
   import { fahrenheit, celsius } from './dataTemperature';
-  import { convertTemperature } from '../../service/convertTemperature';
 
   let options = fahrenheit;
   let result = celsius;
   let inputValue = 0;
-  let selectedValue = options[0].unit;
+  let isCToF = false;
+
+  $: result[0].value = isCToF
+    ? inputValue * (9 / 5) + 32
+    : (inputValue - 32) * (5 / 9);
 
   function changeSystemUnit() {
     let temp = result;
     result = options;
     options = temp;
     inputValue = 0;
-    selectedValue = options[0].unit;
+    isCToF = !isCToF;
   }
 </script>
 
@@ -31,10 +34,7 @@
   </div>
 </div>
 
-<h2>Résultats :</h2>
-<Result
-  result={convertTemperature(options, result, inputValue, selectedValue)}
-/>
+<Result {result} />
 
 <style>
   .input-container {

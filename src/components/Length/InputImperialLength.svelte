@@ -23,9 +23,12 @@
     yardValue = 0;
   }
 
-  //On convertie toutes les valeurs en miles
-  $: inputValue =
-    mileValue + yardValue / 1760 + footValue / 5280 + inchValue / 63360;
+  //On convertie toutes les valeurs en mm
+  $: inputValue = Math.trunc(
+    (mileValue + yardValue / 1760 + footValue / 5280 + inchValue / 63360) *
+      1.609 *
+      Math.pow(10, 6)
+  );
 </script>
 
 <InputNumber label="Mile" bind:value={mileValue} />

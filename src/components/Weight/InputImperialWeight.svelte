@@ -11,7 +11,8 @@
     onceValue = 0;
   }
 
-  $: inputValue = livreValue + onceValue / 16;
+  //ON convertie les valeurs en livre
+  $: inputValue = Math.trunc(livreValue + (onceValue / 16) * 453592);
 </script>
 
 <InputNumber label="Livre" bind:value={livreValue} />
