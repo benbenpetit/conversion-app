@@ -1,20 +1,20 @@
 <script>
-  import Result from '../Result.svelte';
-  import { fahrenheit, celsius } from './dataTemperature';
+  import Result from '../components/Result.svelte';
+  import { fahrenheit, celsius } from '../data/dataTemperature';
 
-  let options = fahrenheit;
-  let result = celsius;
+  let enterUnits = fahrenheit;
+  let resultUnits = celsius;
   let inputValue = 0;
   let isCToF = false;
 
-  $: result[0].value = isCToF
+  $: resultUnits[0].value = isCToF
     ? inputValue * (9 / 5) + 32
     : (inputValue - 32) * (5 / 9);
 
   function changeSystemUnit() {
-    let temp = result;
-    result = options;
-    options = temp;
+    let temp = resultUnits;
+    resultUnits = enterUnits;
+    enterUnits = temp;
     inputValue = 0;
     isCToF = !isCToF;
   }
@@ -24,17 +24,17 @@
 
 <!-- Bouton pour change le système d'unité  -->
 <button on:click={changeSystemUnit}
-  >{options[0].kind} -> {result[0].kind}</button
+  >{enterUnits[0].label} -> {resultUnits[0].label}</button
 >
 
 <div class="input-container">
   <input type="number" bind:value={inputValue} />
   <div class="unit-container">
-    <p>{options[0].label}</p>
+    <p>{enterUnits[0].label}</p>
   </div>
 </div>
 
-<Result {result} />
+<Result result={resultUnits} />
 
 <style>
   .input-container {

@@ -1,8 +1,7 @@
 <script>
   import { Router, Route, Link } from 'svelte-routing';
-  import LengthPage from './components/Length/LengthPage.svelte';
-  import WeightPage from './components/Weight/WeightPage.svelte';
-  import TemperaturePage from './components/Temperature/TemperaturePage.svelte';
+  import ConvertorPage from './pages/convertorPage.svelte';
+  import TemperaturePage from './pages/TemperaturePage.svelte';
 </script>
 
 <main>
@@ -14,8 +13,15 @@
       <Link to="temperature">Température</Link>
     </nav>
     <div>
-      <Route path="/" component={LengthPage} />
-      <Route path="poids" component={WeightPage} />
+      <Route path="/">
+        <ConvertorPage
+          whatConversion={'Longueur'}
+          factorConversionList={[1760, 3, 12]}
+        />
+      </Route>
+      <Route path="poids">
+        <ConvertorPage whatConversion={'Poids'} factorConversionList={[16]} />
+      </Route>
       <Route path="temperature" component={TemperaturePage} />
     </div>
   </Router>
