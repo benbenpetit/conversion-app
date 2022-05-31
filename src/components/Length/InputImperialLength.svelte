@@ -23,7 +23,7 @@
     yardValue = 0;
   }
 
-  //On convertie toutes les valeurs en mm
+  //On convertitF toutes les valeurs en mm
   $: inputValue = Math.trunc(
     (mileValue + yardValue / 1760 + footValue / 5280 + inchValue / 63360) *
       1.609 *

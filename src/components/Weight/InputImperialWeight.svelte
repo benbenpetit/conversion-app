@@ -11,7 +11,7 @@
     onceValue = 0;
   }
 
-  //ON convertie les valeurs en mg
+  //On convertit les valeurs en mg
   $: inputValue = Math.trunc((livreValue + onceValue / 16) * 453592);
 </script>
 

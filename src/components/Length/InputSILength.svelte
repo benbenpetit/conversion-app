@@ -41,7 +41,7 @@
     hmValue = 0;
   }
 
-  //On convertie toutes les valeurs en Mile
+  //On convertit toutes les valeurs en Mile
   $: inputValue =
     (
       kmValue +
@@ -60,7 +60,7 @@
 <InputNumber label="Mètre" bind:value={mValue} />
 <InputNumber label="Décimètre" bind:value={dmValue} />
 <InputNumber label="Centimètre" bind:value={cmValue} />
-<InputNumber label="Minimètre" bind:value={mmValue} />
+<InputNumber label="Millimètre" bind:value={mmValue} />
 
 <style>
 </style>

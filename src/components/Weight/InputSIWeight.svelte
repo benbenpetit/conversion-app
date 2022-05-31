@@ -41,7 +41,7 @@
     hgValue = 0;
   }
 
-  //On convertie toutes les valeurs en Livre
+  //On convertit toutes les valeurs en Livre
   $: inputValue =
     (
       kgValue +
@@ -60,7 +60,7 @@
 <InputNumber label="Gramme" bind:value={gValue} />
 <InputNumber label="Décigramme" bind:value={dgValue} />
 <InputNumber label="Centigramme" bind:value={cgValue} />
-<InputNumber label="Minigramme" bind:value={mgValue} />
+<InputNumber label="Milligramme" bind:value={mgValue} />
 
 <style>
 </style>

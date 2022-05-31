@@ -22,7 +22,7 @@
 
 <h2>Température</h2>
 
-<!-- Bouton pour change le système d'unité  -->
+<!-- Bouton pour changer le système d'unité  -->
 <button on:click={changeSystemUnit}
   >{enterUnits[0].label} -> {resultUnits[0].label}</button
 >

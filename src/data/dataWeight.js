@@ -5,7 +5,7 @@ export const weight_UnitsImperial = [
 
 export const weight_UnitsSI = [
   {
-    label: 'Minigramme',
+    label: 'Milligramme',
     unit: 'mg',
     kind: 'si',
   },
