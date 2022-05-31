@@ -2,7 +2,7 @@
   export let result;
 </script>
 
-<h2>Résultats :</h2>
+<h2 class="subtitle">Résultats :</h2>
 
 <ul>
   {#each result as res}

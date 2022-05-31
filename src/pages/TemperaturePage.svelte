@@ -1,6 +1,6 @@
 <script>
-  import Result from '../components/Result.svelte';
-  import { fahrenheit, celsius } from '../data/dataTemperature';
+  import Result from "../components/Result.svelte";
+  import { fahrenheit, celsius } from "../data/dataTemperature";
 
   let enterUnits = fahrenheit;
   let resultUnits = celsius;
@@ -20,12 +20,14 @@
   }
 </script>
 
-<h2>Température</h2>
+<h2 class="title is-3 has-text-primary">Température</h2>
 
 <!-- Bouton pour changer le système d'unité  -->
-<button on:click={changeSystemUnit}
-  >{enterUnits[0].label} -> {resultUnits[0].label}</button
->
+<button class="button is-primary" on:click={changeSystemUnit}>
+  {enterUnits[0].label}
+  <i class="p-2 fas fa-arrow-right-long" />
+  {resultUnits[0].label}
+</button>
 
 <div class="input-container">
   <input type="number" bind:value={inputValue} />
@@ -36,7 +38,7 @@
 
 <Result result={resultUnits} />
 
-<style>
+<!-- <style>
   .input-container {
     display: flex;
   }
@@ -52,4 +54,4 @@
     margin-bottom: 0.5em;
     width: 100px;
   }
-</style>
+</style> -->

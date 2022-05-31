@@ -4,50 +4,29 @@
   import TemperaturePage from './pages/TemperaturePage.svelte';
 </script>
 
-<main>
-  <h1>Conversion App</h1>
-  <Router>
-    <nav>
-      <Link to="/">Longueur</Link>
-      <Link to="poids">Poids</Link>
-      <Link to="temperature">Température</Link>
-    </nav>
-    <div>
-      <Route path="/">
-        <ConvertorPage
-          whatConversion={'Longueur'}
-          factorConversionList={[1760, 3, 12]}
-        />
-      </Route>
-      <Route path="poids">
-        <ConvertorPage whatConversion={'Poids'} factorConversionList={[16]} />
-      </Route>
-      <Route path="temperature" component={TemperaturePage} />
+<main class="hero has-text-centered">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-1 has-text-primary">Conversion App</h1>
+      <Router>
+        <nav class="block">
+          <Link class="button is-primary is-outlined" to="/">Longueur</Link>
+          <Link class="button is-primary is-outlined" to="poids">Poids</Link>
+          <Link class="button is-primary is-outlined" to="temperature">Température</Link>
+        </nav>
+        <div>
+          <Route path="/">
+            <ConvertorPage
+              whatConversion={'Longueur'}
+              factorConversionList={[1760, 3, 12]}
+            />
+          </Route>
+          <Route path="poids">
+            <ConvertorPage whatConversion={'Poids'} factorConversionList={[16]} />
+          </Route>
+          <Route path="temperature" component={TemperaturePage} />
+        </div>
+      </Router>
     </div>
-  </Router>
+  </div>
 </main>
-
-<style>
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
-</style>

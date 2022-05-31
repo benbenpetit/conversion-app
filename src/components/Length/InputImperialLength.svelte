@@ -31,10 +31,7 @@
   );
 </script>
 
-<InputNumber label="Mile" bind:value={mileValue} />
-<InputNumber label="Yard" bind:value={yardValue} />
-<InputNumber label="Foot" bind:value={footValue} />
-<InputNumber label="Inch" bind:value={inchValue} />
-
-<style>
-</style>
+<InputNumber class="column" label="Mile" bind:value={mileValue} />
+<InputNumber class="column" label="Yard" bind:value={yardValue} />
+<InputNumber class="column" label="Foot" bind:value={footValue} />
+<InputNumber class="column" label="Inch" bind:value={inchValue} />
