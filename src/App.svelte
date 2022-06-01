@@ -1,6 +1,6 @@
 <script>
   import { Router, Route, Link } from 'svelte-routing';
-  import ConvertorPage from './pages/convertorPage.svelte';
+  import ConvertorPage from './pages/ConvertorPage.svelte';
   import TemperaturePage from './pages/TemperaturePage.svelte';
 </script>
 

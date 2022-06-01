@@ -23,7 +23,7 @@
     yardValue = 0;
   }
 
-  //On convertitF toutes les valeurs en mm
+  //On convertit toutes les valeurs en mm
   $: inputValue = Math.trunc(
     (mileValue + yardValue / 1760 + footValue / 5280 + inchValue / 63360) *
       1.609 *
@@ -31,7 +31,7 @@
   );
 </script>
 
-<InputNumber class="column" label="Mile" bind:value={mileValue} />
-<InputNumber class="column" label="Yard" bind:value={yardValue} />
-<InputNumber class="column" label="Foot" bind:value={footValue} />
-<InputNumber class="column" label="Inch" bind:value={inchValue} />
+<InputNumber label="Mile" bind:value={mileValue} />
+<InputNumber label="Yard" bind:value={yardValue} />
+<InputNumber label="Foot" bind:value={footValue} />
+<InputNumber label="Inch" bind:value={inchValue} />

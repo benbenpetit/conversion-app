@@ -47,14 +47,14 @@
 <h2 class="title is-3 has-text-primary">{whatConversion}</h2>
 
 <!-- Bouton pour changer le système d'unité  -->
-<button class="button is-primary" on:click={changeSystemUnit}>
+<button class="button is-primary block" on:click={changeSystemUnit}>
   {enterUnits[0].kind} 
   <i class="p-2 fas fa-arrow-right-long" />
   {resultUnits[0].kind}
 </button>
 
-<div class="container">
-  <div class="colums is-justify-content-space-between">
+<div class="container block">
+  <div class="is-inline-flex">
     {#if isImperialUnit}
       {#if whatConversion == "Longueur"}
         <InputImperialLength bind:inputValue />
@@ -70,9 +70,3 @@
 </div>
 
 <Result result={converter(resultUnits, inputValue, factorConversionList)} />
-
-<!-- <style>
-  .input-container {
-    display: flex;
-  }
-</style> -->

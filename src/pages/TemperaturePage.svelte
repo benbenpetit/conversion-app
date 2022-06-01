@@ -23,35 +23,17 @@
 <h2 class="title is-3 has-text-primary">Température</h2>
 
 <!-- Bouton pour changer le système d'unité  -->
-<button class="button is-primary" on:click={changeSystemUnit}>
+<button class="button is-primary block" on:click={changeSystemUnit}>
   {enterUnits[0].label}
   <i class="p-2 fas fa-arrow-right-long" />
   {resultUnits[0].label}
 </button>
 
-<div class="input-container">
+<div class="container block">
   <input type="number" bind:value={inputValue} />
-  <div class="unit-container">
+  <div class="is-inline-flex">
     <p>{enterUnits[0].label}</p>
   </div>
 </div>
 
 <Result result={resultUnits} />
-
-<!-- <style>
-  .input-container {
-    display: flex;
-  }
-
-  input {
-    width: 100px;
-    text-align: center;
-  }
-
-  .unit-container {
-    border: 1px solid #ccc;
-    padding: 0.4em;
-    margin-bottom: 0.5em;
-    width: 100px;
-  }
-</style> -->
