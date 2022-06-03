@@ -1,7 +1,9 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <script>
   import { Router, Route, Link } from 'svelte-routing';
   import ConvertorPage from './pages/ConvertorPage.svelte';
   import TemperaturePage from './pages/TemperaturePage.svelte';
+  import 'bulma/css/bulma.css';
 </script>
 
 <main class="hero has-text-centered">
