@@ -17,4 +17,4 @@ On entoure notre application avec un `<Router>` qui agit comme un `context` dans
 
 ### Données
 
-Dans le dossier <span style="color:red">data</span> nous avons établi dans des tableaux d'objets les unités avec le label associé.
+Dans le dossier <span style="color:red">*data*</span> nous avons établi dans des tableaux d'objets les unités avec le label associé.
