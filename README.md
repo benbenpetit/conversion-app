@@ -1,4 +1,6 @@
-## Tester le projet
+# Conversion App
+
+## Lancer le projet
 
 ```bash
 cd svelte-app
